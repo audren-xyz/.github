@@ -16,8 +16,8 @@ Audren is an open-source, self-custodial privacy protocol on Solana (`sBPFv3`). 
 
 | Repository | Description |
 | --- | --- |
-| [**`audren-xyz/audren`**](https://github.com/audren-xyz/audren) | Core `#![no_std]` Pinocchio sBPFv3 Solana program, Rust prover & client, published Codama/Anchor IDLs, `@audren/sdk`, self-hostable Privacy Relayer, and `audren.xyz` web app |
-| [**`audren-xyz/examples`**](https://github.com/audren-xyz/examples) | Runnable Rust and TypeScript integrations for Solana Mainnet & Devnet |
+| [**`audren-xyz/audren`**](https://github.com/audren-xyz/audren) | Core `#![no_std]` Pinocchio sBPFv3 Solana program, four standardized SDKs (**Rust**, **TypeScript**, **Swift iOS/macOS**, **Kotlin Android/JVM**) proven against `spec/test-vectors.json`, published Codama/Anchor IDLs, self-hostable Privacy Relayer, and `audren.xyz` web app |
+| [**`audren-xyz/examples`**](https://github.com/audren-xyz/examples) | Standardized 6-building-block runnable examples across **Rust**, **TypeScript**, **Swift (iOS)**, and **Kotlin (Android)** for Solana Mainnet & Devnet |
 
 ### On-Chain Verification & Links
 
