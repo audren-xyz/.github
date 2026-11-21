@@ -18,25 +18,25 @@
 
 **Private money on Solana. Existing tokens. One shared pool.**
 
-Audren is an open-source, self-custodial privacy protocol on Solana (`sBPFv3`, `#![no_std]`, `pinocchio 0.11.1`). Shield native SOL, Classic SPL tokens, and transferable Token-2022 mints without wrapper tokens; send private transfers across 32/64/128-slot rings, execute single-transaction private swaps through compatible DEX routers, and produce verifiable selective disclosure receipts — with local proofs, keys you control, no trusted setup, and no off-chain indexer.
+Audren is an open-source, self-custodial privacy protocol on Solana (`sBPFv3`, `#![no_std]`, `pinocchio 0.11.1`). Shield native SOL, Classic SPL tokens, and transferable Token-2022 mints without wrapper tokens; send private transfers across 32/64/128-slot rings, compose with Solana DeFi via protocol-agnostic `ExecViaEscrow` CPI (DEX swaps, lending supply, yield vaults, liquid staking, perp LP, RWAs), fund 0-SOL wallets or deterministic DeFi session keypairs via self-paying `Withdraw(unwrap_wsol)` with zero-dust sweeps, and produce verifiable selective disclosure receipts — with local proofs, keys you control, no trusted setup, and no off-chain indexer.
 
 ### Repositories
 
 | Repository | Description |
 | --- | --- |
-| [**`audren-xyz/audren`**](https://github.com/audren-xyz/audren) | Core `#![no_std]` Pinocchio sBPFv3 Solana program, **4 standardized official SDKs** (`Rust`, `TypeScript`, `Swift iOS/macOS`, `Kotlin Android/JVM`, `45` synced UniFFI exports) proven against [`spec/test-vectors.json`](https://github.com/audren-xyz/audren/blob/main/spec/test-vectors.json) and executed against the verified Mainnet `audren.so` in LiteSVM CI, published Codama v1.8.0 & Anchor v0.30+ IDLs, self-hostable Privacy Relayer, and `audren.xyz` web app |
+| [**`audren-xyz/audren`**](https://github.com/audren-xyz/audren) | Core `#![no_std]` Pinocchio sBPFv3 Solana program, **4 standardized official SDKs** (`Rust`, `TypeScript`, `Swift iOS/macOS`, `Kotlin Android/JVM`, `47` synced UniFFI exports) proven against [`spec/test-vectors.json`](https://github.com/audren-xyz/audren/blob/main/spec/test-vectors.json) and executed against real deterministic `sBPFv3` `audren.so` in LiteSVM CI, published Codama v1.8.0 & Anchor v0.30+ IDLs, self-hostable Privacy Relayer, and `audren.xyz` web app |
 | [**`audren-xyz/examples`**](https://github.com/audren-xyz/examples) | Standardized 6-building-block runnable examples across **Rust**, **TypeScript**, **Swift (iOS/macOS)**, and **Kotlin (Android/JVM)** — consuming the official SDKs directly with **100% byte-for-byte canonical stdout parity** (`Rust == TypeScript == Swift == Kotlin`) enforced in CI |
 
 ### Standardized Official SDKs & Empirical Verification
 
-All 4 official SDKs implement the exact same **6 standardized building blocks** (`Keys`, `PDAs & Layouts`, `dataSlice[64..1120] Scanner`, `Local ZK Prover`, `Selective Disclosure & Institutional Audit`, `Relayer & Router`), verified continuously in CI:
+All 4 official SDKs implement the exact same **6 standardized building blocks** (`Keys` incl. `DefiSessionKeypair`, `PDAs & Layouts` incl. `audren_unwrap`, `dataSlice[64..1120] Scanner`, `Local ZK Prover`, `Selective Disclosure & Institutional Audit`, `Relayer & Escrow CPI`), verified continuously in CI:
 
 | Language | Package | Engine | Continuous Empirical Verification |
 | --- | --- | --- | --- |
-| **Rust** | [`crates/client`](https://github.com/audren-xyz/audren/tree/main/crates/client) | Native `audren-client` (~50 ms `m=5`) | Conformance vectors + 7 LiteSVM E2E/adversarial suites + examples CI parity |
-| **TypeScript** | [`packages/sdk`](https://github.com/audren-xyz/audren/tree/main/packages/sdk) | Zero-dep `@audren/sdk` + pure-TS `@audren/sdk/prover` | Conformance vectors + **real Mainnet `audren.so` LiteSVM CI** + examples CI parity |
-| **Swift (iOS / macOS)** | [`packages/swift`](https://github.com/audren-xyz/audren/tree/main/packages/swift) | UniFFI over `crates/audren-ffi` (`45` exports, ~50 ms) | `swift test` conformance + **real Mainnet `audren.so` LiteSVM CI** + macOS examples CI parity |
-| **Kotlin (Android / JVM)** | [`packages/kotlin`](https://github.com/audren-xyz/audren/tree/main/packages/kotlin) | UniFFI + JNA over `crates/audren-ffi` (`45` exports, ~50 ms) | `gradle test` conformance + **real Mainnet `audren.so` LiteSVM CI** + examples CI parity |
+| **Rust** | [`crates/client`](https://github.com/audren-xyz/audren/tree/main/crates/client) | Native `audren-client` (~50 ms `m=5`) | Conformance vectors + 8 LiteSVM E2E/adversarial suites + examples CI parity |
+| **TypeScript** | [`packages/sdk`](https://github.com/audren-xyz/audren/tree/main/packages/sdk) | Zero-dep `@audren/sdk` + pure-TS `@audren/sdk/prover` | Conformance vectors + **real sBPFv3 `audren.so` LiteSVM CI** + examples CI parity |
+| **Swift (iOS / macOS)** | [`packages/swift`](https://github.com/audren-xyz/audren/tree/main/packages/swift) | UniFFI over `crates/audren-ffi` (`47` exports, ~50 ms) | `swift test` conformance + **real sBPFv3 `audren.so` LiteSVM CI** + macOS examples CI parity |
+| **Kotlin (Android / JVM)** | [`packages/kotlin`](https://github.com/audren-xyz/audren/tree/main/packages/kotlin) | UniFFI + JNA over `crates/audren-ffi` (`47` exports, ~50 ms) | `gradle test` conformance + **real sBPFv3 `audren.so` LiteSVM CI** + examples CI parity |
 
 ### On-Chain Verification & Links
 
