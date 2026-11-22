@@ -6,8 +6,8 @@ Thank you for contributing to Audren! Every repository under [`audren-xyz`](http
 
 See [`audren-xyz/audren/CONTRIBUTING.md`](https://github.com/audren-xyz/audren/blob/main/CONTRIBUTING.md) and [`AGENTS.md`](https://github.com/audren-xyz/audren/blob/main/AGENTS.md). Before opening a PR:
 
-1. Run `python3 idl/verify-idl.py` (verifies Codama/Anchor IDLs, all 4 SDKs, all 47 synced UniFFI exports, `spec/test-vectors.json`, docs, and toolchain pins).
-2. Run Rust, TypeScript, Swift, and Kotlin conformance suites + `AUDREN_REQUIRE_SBF=1 AUDREN_REQUIRE_MOCK_ROUTER=1 cargo test --workspace` against the real sBPFv3 `audren.so` and `audren_mock_router.so`.
+1. Run `python3 idl/verify-idl.py` (verifies Codama/Anchor IDLs, all 4 SDKs, all 45 synced UniFFI exports, WASM prover parity, `spec/test-vectors.json`, docs, and toolchain pins).
+2. Run Rust, TypeScript, Swift, and Kotlin conformance suites + `AUDREN_REQUIRE_SBF=1 AUDREN_REQUIRE_MOCK_ROUTER=1 cargo test --release --workspace` against the real sBPFv3 `audren.so`, `audren_mock_router.so`, and `audren_mock_hook.so`.
 
 ## Standardized 4-Language Examples (`audren-xyz/examples`)
 
