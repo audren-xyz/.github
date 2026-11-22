@@ -11,7 +11,7 @@
 <p>
   <a href="https://github.com/audren-xyz/audren/actions/workflows/ci.yml"><img src="https://github.com/audren-xyz/audren/actions/workflows/ci.yml/badge.svg" alt="Core & 4 SDKs CI" /></a>
   <a href="https://github.com/audren-xyz/examples/actions/workflows/ci.yml"><img src="https://github.com/audren-xyz/examples/actions/workflows/ci.yml/badge.svg" alt="4-Language Examples Parity CI" /></a>
-  <a href="https://github.com/audren-xyz/audren/releases/tag/v1.0.0"><img src="https://img.shields.io/badge/release-v1.0.0-121210" alt="Release v1.0.0" /></a>
+  <a href="https://github.com/audren-xyz/audren/releases/tag/v1.1.0"><img src="https://img.shields.io/badge/release-v1.1.0-121210" alt="Release v1.1.0" /></a>
   <a href="https://explorer.solana.com/address/AUDRBK6kVkQoEGm3EB7swd34SUPqrHZeNEkB5vZWVSv3/verified-build"><img src="https://img.shields.io/badge/Solana%20Verified%20Build-sBPFv3-184433" alt="Solana Verified Build" /></a>
   <a href="https://github.com/audren-xyz/audren/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-434039" alt="Apache-2.0 License" /></a>
 </p>
@@ -20,7 +20,7 @@
 
 Audren is an open-source, self-custodial privacy protocol on Solana (`sBPFv3`, `#![no_std]`, `pinocchio 0.11.1`, `groth16-solana`). Native SOL, Classic SPL tokens, and transferable Token-2022 mints share one permissionless global 4-ary Depth-20 Multi-Asset Shielded Pool ($4^{20}$ note capacity, 16-lane-capable architecture starting at 4 active lanes) verified on-chain via `192 B` BN254 Groth16 proofs (`17,861` R1CS, `alt_bn128` syscall) in a single Solana Transaction v1 (`0x81`), with protocol-agnostic `ExecViaEscrow` DeFi CPIs (`EXEC_FLAG_FEE_ON_OUTPUT`), atomic WSOL unwrapping (`WITHDRAW_FLAG_UNWRAP_WSOL`), zero-dust sweeps (`DEPOSIT_FLAG_FEE_FROM_AMOUNT`), Mode 1/Mode 2 compliance primitives, and zero-indexer ordinary Solana RPC wallet sync (`CompactWalletStore`).
 
-> **Pre-audit & Groth16 MPC ceremony status:** Audren is pre-audit and currently embeds `DEV_DETERMINISTIC_VK`. A public Phase-2 Groth16 MPC ceremony and independent audit are planned prior to production custody, and the program remains upgradeable until audits and ceremony verification conclude.
+> **Groth16 Ceremony & Pre-audit Status:** Audren's `vk_id = 0` parameters are anchored to the official Hermez/PSE Perpetual Powers of Tau (`powersOfTau28_hez_final_15.ptau`, 71+ independent public contributors) plus Audren's verifiable BGM17 Phase-2 ceremony (`ceremony/transcript.json`, drand Quicknet `#34194203` & Solana Mainnet slot `472705896`). Additional community Phase-2 contributions remain open, and an independent third-party security audit is pending prior to revoking BPF upgrade authority.
 
 ### Repositories
 
