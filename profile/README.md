@@ -11,7 +11,7 @@
 <p>
   <a href="https://github.com/audren-xyz/audren/actions/workflows/ci.yml"><img src="https://github.com/audren-xyz/audren/actions/workflows/ci.yml/badge.svg" alt="Core & 4 SDKs CI" /></a>
   <a href="https://github.com/audren-xyz/examples/actions/workflows/ci.yml"><img src="https://github.com/audren-xyz/examples/actions/workflows/ci.yml/badge.svg" alt="4-Language Examples Parity CI" /></a>
-  <a href="https://github.com/audren-xyz/audren/releases/tag/v1.1.0"><img src="https://img.shields.io/badge/release-v1.1.0-121210" alt="Release v1.1.0" /></a>
+  <a href="https://github.com/audren-xyz/audren/releases/tag/v1.1.1"><img src="https://img.shields.io/badge/release-v1.1.1-121210" alt="Release v1.1.1" /></a>
   <a href="https://explorer.solana.com/address/AUDRBK6kVkQoEGm3EB7swd34SUPqrHZeNEkB5vZWVSv3/verified-build"><img src="https://img.shields.io/badge/Solana%20Verified%20Build-sBPFv3-184433" alt="Solana Verified Build" /></a>
   <a href="https://github.com/audren-xyz/audren/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-434039" alt="Apache-2.0 License" /></a>
 </p>
